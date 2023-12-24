@@ -1,6 +1,5 @@
-# робот ищет проход в бесконечной стене и обходит её
-
 using HorizonSideRobots
+robot = Robot("untitled.sit", animate = true)
 
 function find_hole!(robot)
     side = Ost
@@ -8,7 +7,7 @@ function find_hole!(robot)
     while isborder(robot, Nord)
         n += 1
         mov!(robot, side, n)
-        side = inverse(side)
+        side = inverse(side)       
     end
     move!(robot, Nord)
     mov!(robot, side, div(n,2))
